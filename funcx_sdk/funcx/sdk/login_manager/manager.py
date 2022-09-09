@@ -181,4 +181,5 @@ class LoginManager:
             base_url=base_url,
             app_name=app_name,
             authorizer=self._get_authorizer(FuncxScopes.resource_server),
+            transport_params = {"verify_ssl": False}
         )

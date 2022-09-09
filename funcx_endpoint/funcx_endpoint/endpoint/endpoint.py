@@ -116,7 +116,7 @@ class Endpoint:
         """
         # construct client to force login flow
         # FIXME: `funcx` should provide a cleaner way of doing login
-        FuncXClient(do_version_check=False)
+        FuncXClient(do_version_check=False, disable_requests_verify=True)
 
         if os.path.exists(self.funcx_dir):
             click.confirm(
@@ -174,6 +174,7 @@ class Endpoint:
             "results_ws_uri": endpoint_config.config.results_ws_uri,
             "environment": endpoint_config.config.environment,
             "warn_about_url_mismatch": endpoint_config.config.warn_about_url_mismatch,
+            "disable_requests_verify": True,
         }
         funcx_client = FuncXClient(**funcx_client_options)
 

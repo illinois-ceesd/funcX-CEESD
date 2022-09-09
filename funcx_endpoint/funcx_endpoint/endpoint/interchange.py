@@ -104,7 +104,7 @@ class EndpointInterchange:
         self.endpoint_name = endpoint_name
 
         if funcx_client is None:
-            funcx_client = FuncXClient()
+            funcx_client = FuncXClient(disable_requests_verify=True)
         self.funcx_client = funcx_client
 
         self.initial_registration_complete = False
